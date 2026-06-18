@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catalogo de tecnologia">
+    <meta name="keywords" content="laptop, tablet, celular, consola">
+    <meta name="author" content="Freddy Bajaña">
+    <title>Catalogo de tecnologia</title>
+    <style>
+        :root {
+            --color-bg: #f1f1f1;
+            --color-bg2: #e6e6e6;
+            --color-primary: #564ebe;
+            --color-border: #918eaf;
+            --color-border-img: #777;
+            --radius: 10px;
+            --padding: 16px;
+            --margin: 10px;
+            --color-card: #d8dcff;
+        }
+        /*Celular*/
+        @media (max-width:400px) {
+            .container {
+                grid-template-columns: 1fr;
+                font-size: 18px
+            }
+        }
+        /*tablet*/
+        @media (min-width:600px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        /*desktop*/
+        @media (min-width:900px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        /*Selector universal*/
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+        /*Selectores de elemento*/
+        body{
+            background-color: var(--color-bg);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        button{
+            padding: var(--padding);
+            border-radius: var(--radius);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        footer{
+            border-top: 2px solid var(--color-border);
+            background-color: var(--color-primary);
+            color: white;
+        }
+        /*Selectores de clase*/
+        div.producto, div.categoria {
+            border: 2px solid;
+            border-color: var(--color-border);
+            margin: var(--margin);
+            border-radius: var(--radius);
+            text-align: center;
+            padding: var(--padding);
+            background-color: var(--color-card);
+        }
+
+        .container { /*grid layout*/
+            display: grid; 
+        }
+
+        .container2{ /*flexbox layout*/
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /*Selector por agrupacion*/
+        h2, .informacion, ol{
+            margin-left: 10px;
+        }
+
+        .container, .container2{
+            padding: var(--padding);
+            background-color: var(--color-bg2);
+            margin: 10px;
+            border-radius: var(--radius);
+        }
+        /*Selector de id*/
+        #encabezado{
+            background-color: var(--color-primary);
+            margin: 0;
+            padding: var(--padding);
+            border-bottom: 2px solid var(--color-border);
+        }
+        /*Selector combinador descendientes*/
+        div p{
+            font-size: 16px;
+        }
+        /*Selector combinador de hijos directos*/
+        .producto>img, .categoria>img {
+            max-width: 100%;
+            height: 170px;
+            border: 2px solid var(--color-border-img);
+            border-radius: var(--radius);
+            background-color: azure;
+        }
+        /*Selector combinador de hermanos generales*/
+        div img~*{
+            margin: 5px;
+        }
+        /*Selector combinador de hermano adyacente*/
+        main+footer{
+            margin-top: 20px;
+        }
+        /*Selector de pseudo-clase*/
+        button:hover{
+            background-color: var(--color-primary);
+            color: white;
+        }
+        /*Selector de pseudo-elemento*/
+        h2::before{
+            content: "*";
+        }
+        /*Selector de atributo*/
+        img[alt*="Categoria"]{
+            width: 230px;
+            height: 150px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header id="encabezado">
+        <div>
+            <h1>Catalogo de tecnología</h1>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Productos principales:</h2>
+            <div class="container">
+                <div class="producto">
+                    <img src="https://p4-ofp.static.pub//fes/cms/2024/10/30/edvxn0kpi6nq0kjzrwi51jtbnn6gto295267.png"
+                    alt="Laptop lenovo idea pad 5">
+                    <h3>Laptop lenovo ideapad 5</h3>
+                    <p>Laptop lenovo con 12gb de ram, procesador intel i7 12va generación, 500gb SSD</p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://i5.walmartimages.com/seo/Valve-s-Steam-Deck-512-GB-US-Plug-V004287-30_721dfd3a-0133-45e5-bacf-7882301c009b.754435869c0cecb85fa90d1a136062a9.jpeg"
+                    alt="PC de mano Steam Deck">
+                    <h3>Steam Deck Oled</h3>
+                    <p>Consola portátil tipo PC con pantalla oled de 7,4” 90hz, procesador AMD personalizado, 16 GB de RAM</p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://cdn.shopify.com/s/files/1/0437/8358/5942/files/PC_GAMER-min.png?v=1762149806"
+                    alt="Computadora Gamer">
+                    <h3>Computadora Gamer</h3>
+                    <p>Computadora 16gb de ram, procesador AMD Ryzen 5 5600 y tarjeta gráfica RTX 3060 </p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://mobilestore.ec/wp-content/uploads/2024/09/iPhone-16-Pro-White-Mobile-Store-Ecuador.png" 
+                    alt="Celular Iphone 16 Pro Max">
+                    <h3>Iphone 16</h3>
+                    <p>Celular Iphone potente de 512gb, camara de 48MP, pantalla Oled 6,9” 120hz</p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://attackshark.com/cdn/shop/files/5_9_fa5d4e16-a769-4a78-9f9d-75ff08f6c47c.jpg?v=1754568250" 
+                    alt="Teclado Attackshark x68 HE">
+                    <h3>Attackshark x68 HE</h3>
+                    <p>Teclado gamer 68% alambrico con luces rgb, teclas programables y switches magneticos</p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_780570-MLA99519723660_112025-O.webp" 
+                    alt="Mouse Attackshark x11">
+                    <h3>Attackshark x11</h3>
+                    <p>Mouse gamer inalambrico con conexion por receptor usb o Bluetooth con base de carga</p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://mundotek.com.ec/wp-content/uploads/2024/01/03-sm-s928_galaxys24ultra_front_titaniumgray.png" 
+                    alt="Celular Samsung galaxy s24">
+                    <h3>Samsung galaxy s24</h3>
+                    <p>Smartphone con pantalla AMOLED de 6.2”, procesador Snapdragon 8 Gen 3 y cámara principal de 50 MP</p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://i5.walmartimages.com/seo/Xiaomi-Pad-6-WiFi-Version-11-inches-144Hz-8840mAh-Bluetooth-5-2-Four-Speakers-Dolby-Atmos-13-Mp-Camera-Champagne-128GB-8GB_c2851310-5c83-4b27-aaf6-52bdaaf07c1a.f969065f3790dc9f279c8c6e2f6472a3.jpeg" 
+                    alt="Tablet Xiaomi pad 6">
+                    <h3>Xiaomi pad 6</h3>
+                    <p>Tablet con pantalla de 11” y tasa de refresco de 144Hz, procesador Snapdragon 870</p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://www.arzopa.com/cdn/shop/files/z1fc_5aeec95e-c662-47c1-a408-33576600390f.png?v=1770019993" 
+                    alt="Monitor portatil Z1fc 144hz">
+                    <h3>Monitor Arzopa Z1fc 144hz</h3>
+                    <p>Monitor portatil de 16.1” 1080p con una tasa de refresco de 144hz con conexion por usb C o HDMI</p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://seracon.com.ec/1086-large_default/control-xbox-series-xs-xbox-one.jpg" 
+                    alt="Mando xbox series x/s">
+                    <h3>Mando xbox series x/s</h3>
+                    <p>Control inalámbrico xbox con diseño ergonómico, gatillos texturizados para mayor precisión, conexión Bluetooth</p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://planetadigitalec.com/cdn/shop/files/Nintendo-Switch-2-Mobile-Store-Ecuador3.webp?v=1757625888" 
+                    alt="Nintendo switch 2">
+                    <h3>Nintendo switch 2</h3>
+                    <p>Consola híbrida portátil y de sobremesa con pantalla 17,9” 120hz con controles desmontables</p>
+                    <button>Ver más</button>
+                </div>
+                <div class="producto">
+                    <img src="https://tecnit.com.ec/wp-content/uploads/2022/08/Pc-Nuc-Intel-Nuc7jyb-Cel.-2.7ghz-Ddr4-Hdmi-Wifi-Gigabit-Usb.jpg" 
+                    alt="Mini pc">
+                    <h3>Mini pc</h3>
+                    <p>Mini pc Intel Core i7-7600U 7ma generación, 8gb de ram, intel hd 620, 500gb SSD</p>
+                    <button>Ver más</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Categorias de productos:</h2>
+            <div class="container2">
+                <div class="categoria">
+                    <img src="https://i.blogs.es/f16b7c/xbox-ps5-nintendo-switch/1366_2000.jpeg" 
+                    alt="Categoria de Consolas">
+                    <h3>Consolas</h3>
+                    <button>Ver productos</button>
+                </div>
+                <div class="categoria">
+                    <img src="https://www.altonivel.com.mx/wp-content/uploads/2018/06/mejores-celulares-2018-900x609.webp" 
+                    alt="Categoria de Celulares">
+                    <h3>Celulares</h3>
+                    <button>Ver productos</button>
+                </div>
+                <div class="categoria">
+                    <img src="https://static.independent.co.uk/2024/11/01/16/best-tablets-1-november-2024.jpg" 
+                    alt="Categoria de Tablets">
+                    <h3>Tablets</h3>
+                    <button>Ver productos</button>
+                </div>
+                <div class="categoria">
+                    <img src="https://intelcorp.scene7.com/is/image/intelcorp/desktop-marquee-16x9:1920-1080?wid=480&hei=270&fmt=webp-alpha" 
+                    alt="Categoria de PCs de escritorio">
+                    <h3>PC de escritorio</h3>
+                    <button>Ver productos</button>
+                </div>
+                <div class="categoria">
+                    <img src="https://digitalpcecuador.com/wp-content/uploads/2024/10/normales.png" 
+                    alt="Categoria de Laptops">
+                    <h3>Laptops</h3>
+                    <button>Ver productos</button>
+                </div>
+                <div class="categoria">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/94d64123-c20d-4627-b6ae-cb3bec82bf3c/v1/img/kv.jpg" 
+                    alt="Categoria de Monitores">
+                    <h3>Monitores</h3>
+                    <button>Ver productos</button>
+                </div>
+                <div class="categoria">
+                    <img src="https://i.blogs.es/a3345c/perifericos-gaming/1366_2000.jpg" 
+                    alt="Categoria de Perifericos">
+                    <h3>Perifericos</h3>
+                    <button>Ver productos</button>
+                </div>
+            </div>
+        </section>    
+    </main>
+    <footer>
+        <div class="informacion">
+            <h3>Contacto</h3>
+            <ul>
+                <li>
+                    <p>Telefono: 090202030</p>
+                </li>
+                <li>
+                    <p>Correo: catalogoTec@gmail.com</p>
+                </li>
+                <li>
+                    <p>Direccion: Guayaquil, alborada</p> 
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
